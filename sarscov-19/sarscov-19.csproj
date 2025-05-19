@@ -45,16 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms.cs" />
-    <Compile Include="StudentBST.cs" />
-    <Compile Include="StudentNode.cs" />
-    <Compile Include="Students.cs">
+    <Compile Include="Logic\Algorithms.cs" />
+    <Compile Include="DataStructures\StudentBST.cs" />
+    <Compile Include="DataStructures\StudentNode.cs" />
+    <Compile Include="Forms\Students.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Students.Designer.cs">
+    <Compile Include="Forms\Students.Designer.cs">
       <DependentUpon>Students.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student.cs" />
+    <Compile Include="Logic\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -62,7 +62,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Students.resx">
+    <EmbeddedResource Include="Forms\Students.resx">
       <DependentUpon>Students.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
