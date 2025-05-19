@@ -14,6 +14,7 @@ namespace sarscov_19
     {
         DataTable table = new DataTable("table");
         List<Student> students = new List<Student>();
+        StudentBST bts = new StudentBST(); 
          
        
         int index; 
@@ -77,7 +78,9 @@ namespace sarscov_19
                 promedio = average,
             };
 
+
             students.Add(s);
+            bts.InsertStudent(s);
 
             textBox1.Clear();
             textBox2.Clear();
@@ -145,7 +148,7 @@ namespace sarscov_19
 
         private void button4_Click_1(object sender, EventArgs e)
         {
-            bool found;
+            
             string target = textBox4.Text;
 
             if (string.IsNullOrEmpty(target))
@@ -154,9 +157,9 @@ namespace sarscov_19
                 return;
             }
 
-            found = Algorithms.LinearSearchMatricula(students, target);
+            Student found = bts.FindByMatricula(target);
 
-            if (!found)
+            if (found == null)
             {
                 MessageBox.Show("Student ID not found.");
                 textBox4.Clear();
@@ -168,6 +171,7 @@ namespace sarscov_19
             
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
+                if (row.IsNewRow) continue;
                 if (row.Cells[1].Value != null && row.Cells[1].Value.ToString() == target)
                 {
                     row.Selected = true;
